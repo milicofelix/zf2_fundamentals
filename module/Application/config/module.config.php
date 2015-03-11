@@ -53,6 +53,26 @@ return array(
         ),
     ),
     'service_manager' => array(
+        'services' => array(
+      'categories' => array(
+          'barter',
+          'beauty',
+          'clothing',
+          'computer',
+          'entertainment',
+          'free',
+          'garden',
+          'general',
+          'health',
+          'household',
+          'phones',
+          'property',
+          'sporting',
+          'tools',
+          'transportation',
+          'wanted'
+      )  
+    ),
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
@@ -61,6 +81,7 @@ return array(
             'translator' => 'MvcTranslator',
         ),
     ),
+    
     'translator' => array(
         'locale' => 'en_US',
         'translation_file_patterns' => array(

@@ -23,7 +23,11 @@ class Module
         $eventManager->attach(MvcEvent::EVENT_DISPATCH,array($this, 'onDispatch'),100);
     }
     public function onDispatch(MvcEvent $e){
-        $e->getViewModel()->setVariable('categories', 'CATEGORY LIST');
+        $sm             = $e->getApplication()->getServiceManager();
+        $categoryList   = $sm->get('categories'); 
+        $e->getViewModel()->setVariable('categories', $categoryList);
+        
+        
     }
 
     public function getConfig()
