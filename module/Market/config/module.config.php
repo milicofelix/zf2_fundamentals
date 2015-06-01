@@ -28,11 +28,25 @@ return array(
                     ),
                 ),
             ),
+            
+// used to test that the controller shows up
+            'market-test' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/market/test',
+                    'defaults' => array(
+                        'controller'    => 'market-test-controller',
+                        'action'        => 'index',
+                    ),
+
+                ),
+            ),
         ),
     ),
     'controllers' => array(
         'invokables' => array(
-            'market-index-controller' => 'Market\Controller\IndexController'
+            'market-index-controller' => 'Market\Controller\IndexController',
+            'market-test-controller' => 'Market\Controller\TestController',
         ),
     ),
     'view_manager' => array(
