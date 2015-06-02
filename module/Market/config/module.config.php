@@ -50,9 +50,14 @@ return array(
             'market-view-controller' => 'Market\Controller\ViewController'
         ),
         'factories' => array(
+
            'market-post-controller' => 'Market\Factory\PostControllerFactory' 
-          //'market-post-controller' => 'Market\Controller\PostControllerFactory'  
-        )
+          //'market-post-controller' => 'Market\Controller\PostControllerFactory'  /** foi apenas um teste **/
+        ),
+        'aliases' => array(
+            'alt'=>'market-view-controller'
+            )
+
     ),
     'view_manager' => array(
         'template_path_stack' => array(
