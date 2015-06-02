@@ -1,6 +1,6 @@
 <?php
 
-namespace Market\Controller;
+namespace Market\Factory;
 
 /**
  * Description of PostControllerFactory
@@ -11,7 +11,7 @@ namespace Market\Controller;
 //use Zend\View\Model\ViewModel;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-//use Market\Controller\PostController;
+use Market\Controller\PostController;
 
 class PostControllerFactory implements FactoryInterface {
 
@@ -21,7 +21,7 @@ class PostControllerFactory implements FactoryInterface {
         $sm = $allServices->get('ServiceManager');
         $categories = $sm->get('categories');
         
-        $postController = new \Market\Controller\PostController();
+        $postController = new PostController();
         $postController->setCategories($categories);
         
         return $postController;

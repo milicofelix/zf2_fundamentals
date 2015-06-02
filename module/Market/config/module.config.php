@@ -50,8 +50,8 @@ return array(
             'market-view-controller' => 'Market\Controller\ViewController'
         ),
         'factories' => array(
-           //'market-post-controller' => 'Market\Factory\PostControllerFactory'  Não consegui fazer funcionar desta forma ;(
-          'market-post-controller' => 'Market\Controller\PostControllerFactory'  
+           'market-post-controller' => 'Market\Factory\PostControllerFactory'  //Não consegui fazer funcionar desta forma ;(
+          //'market-post-controller' => 'Market\Controller\PostControllerFactory'  
         )
     ),
     'view_manager' => array(
