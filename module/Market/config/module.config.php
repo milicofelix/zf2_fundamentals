@@ -47,7 +47,17 @@ return array(
         'invokables' => array(
             'market-index-controller' => 'Market\Controller\IndexController',
             'market-test-controller' => 'Market\Controller\TestController',
+            'market-view-controller' => 'Market\Controller\ViewController'
         ),
+        'factories' => array(
+
+           'market-post-controller' => 'Market\Factory\PostControllerFactory' 
+          //'market-post-controller' => 'Market\Controller\PostControllerFactory'  /** foi apenas um teste **/
+        ),
+        'aliases' => array(
+            'alt'=>'market-view-controller'
+            )
+
     ),
     'view_manager' => array(
         'template_path_stack' => array(
