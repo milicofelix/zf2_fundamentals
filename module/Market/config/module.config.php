@@ -52,7 +52,10 @@ return array(
         'factories' => array(
            //'market-post-controller' => 'Market\Factory\PostControllerFactory'  Não consegui fazer funcionar desta forma ;(
           'market-post-controller' => 'Market\Controller\PostControllerFactory'  
-        )
+        ),
+        'aliases' => array(
+            'alt'=>'market-view-controller'
+            )
     ),
     'view_manager' => array(
         'template_path_stack' => array(
