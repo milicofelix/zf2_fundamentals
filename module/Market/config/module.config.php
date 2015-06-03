@@ -3,44 +3,75 @@
 return array(
     'router' => array(
         'routes' => array(
+            'home' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/',
+                    'defaults' => array(
+                        'controller' => 'market-index-controller',
+                        'action' => 'index'
+                    )
+                )
+            ),
             'market' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route'    => '/market',
+                    'route' => '/market',
                     'defaults' => array(
                         'controller' => 'market-index-controller',
-                        'action'     => 'index',
-                    ),
+                        'action' => 'index'
+                    )
                 ),
                 'may_terminate' => true,
                 'child_routes' => array(
-                    'default' => array(
-                        'type'    => 'Segment',
+                    'view' => array(
+                        'type' => 'Literal',
                         'options' => array(
-                            'route'    => '/[:controller[/:action]]',
-                            'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ),
+                            'route' => '/view',
                             'defaults' => array(
-                            ),
+                                'controller' => 'market-view-controller',
+                                'action' => 'index'
+                            )
                         ),
-                    ),
+                        'may_terminate' => true,
+                        'child_routes' => array(
+                            'main' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/main[/:category]',
+                                    'defaults' => array(
+                                        'action' => 'index'
+                                    )
+                                )
+                            ),
+                            'item' => array(
+                                'type' => 'Segment',
+                                'options' => array(
+                                    'route' => '/item[/:itemId]',
+                                    'defaults' => array(
+                                        'action' => 'item'
+                                    ),
+                                    'constraints' => array(
+                                        'itemId' => '[0-9]*'
+                                    )
+                                )
+                            )
+                        )
+                    )
+                    )
                 ),
-            ),
-            
 // used to test that the controller shows up
-            'market-test' => array(
-                'type'    => 'Literal',
-                'options' => array(
-                    'route'    => '/market/test',
-                    'defaults' => array(
-                        'controller'    => 'market-test-controller',
-                        'action'        => 'index',
-                    ),
-
-                ),
-            ),
+                'market-test' => array(
+                    'type' => 'Literal',
+                    'options' => array(
+                        'route' => '/market/test',
+                        'defaults' => array(
+                            'controller' => 'market-test-controller',
+                            'action' => 'index',
+                        )
+                    )
+                )
+          
         ),
     ),
     'controllers' => array(
@@ -50,14 +81,12 @@ return array(
             'market-view-controller' => 'Market\Controller\ViewController'
         ),
         'factories' => array(
-
-           'market-post-controller' => 'Market\Factory\PostControllerFactory' 
-          //'market-post-controller' => 'Market\Controller\PostControllerFactory'  /** foi apenas um teste **/
+            'market-post-controller' => 'Market\Factory\PostControllerFactory'
+        //'market-post-controller' => 'Market\Controller\PostControllerFactory'  /** foi apenas um teste **/
         ),
         'aliases' => array(
-            'alt'=>'market-view-controller'
-            )
-
+            'alt' => 'market-view-controller'
+        )
     ),
     'view_manager' => array(
         'template_path_stack' => array(
