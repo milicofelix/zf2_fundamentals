@@ -21,7 +21,7 @@ return array(
                         'controller' => 'market-index-controller',
                         'action' => 'index'
                     )
-                ),
+                ),               
                 'may_terminate' => true,
                 'child_routes' => array(
                     'view' => array(
@@ -58,21 +58,19 @@ return array(
                             )
                         )
                     )
-                    )
-                ),
-// used to test that the controller shows up
-                'market-test' => array(
-                    'type' => 'Literal',
-                    'options' => array(
-                        'route' => '/market/test',
-                        'defaults' => array(
-                            'controller' => 'market-test-controller',
-                            'action' => 'index',
-                        )
+                )
+            ),
+            'market-test' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/market/test',
+                    'defaults' => array(
+                        'controller' => 'market-test-controller',
+                        'action' => 'index',
                     )
                 )
-          
-        ),
+            )
+        )
     ),
     'controllers' => array(
         'invokables' => array(
