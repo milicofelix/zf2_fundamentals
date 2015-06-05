@@ -14,9 +14,9 @@ return array(
                 )
             ),
             'market' => array(
-                'type' => 'Literal',
+                'type' => 'Segment',
                 'options' => array(
-                    'route' => '/market',
+                    'route' => '/market[/]',
                     'defaults' => array(
                         'controller' => 'market-index-controller',
                         'action' => 'index'
@@ -27,7 +27,7 @@ return array(
                     'view' => array(
                         'type' => 'Literal',
                         'options' => array(
-                            'route' => '/view',
+                            'route' => 'view',
                             'defaults' => array(
                                 'controller' => 'market-view-controller',
                                 'action' => 'index'
@@ -61,9 +61,9 @@ return array(
                 )
             ),
             'market-test' => array(
-                'type' => 'Literal',
+                'type' => 'Segment',
                 'options' => array(
-                    'route' => '/market/test',
+                    'route' => '/market/test[/]',
                     'defaults' => array(
                         'controller' => 'market-test-controller',
                         'action' => 'index',
