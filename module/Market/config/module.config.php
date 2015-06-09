@@ -25,9 +25,9 @@ return array(
                 'may_terminate' => true,
                 'child_routes' => array(
                     'view' => array(
-                        'type' => 'Literal',
+                        'type' => 'Segment',
                         'options' => array(
-                            'route' => 'view',
+                            'route' => 'view[/]',
                             'defaults' => array(
                                 'controller' => 'market-view-controller',
                                 'action' => 'index'
