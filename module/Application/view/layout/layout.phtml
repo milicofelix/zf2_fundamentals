@@ -47,11 +47,13 @@
             <div class="col-lg-2">
                 <h3>Categories</h3>
                 <?php 
-                    echo '<ul>';
-                    foreach ($this->categories as $cat){
-                    echo '<li>'.$cat.'</li>';
-                }
-                echo '</ul>';
+//                    echo '<ul>';
+//                    foreach ($this->categories as $cat){
+//                    echo '<li>'.$cat.'</li>';
+//                 }
+//                echo '</ul>';
+                    echo $this->leftLinks($this->categories,$this->basepath().'/market/view/main'); //utilizando Helpers
+               
                  ?>
             </div>
             <div class="col-lg-8">
