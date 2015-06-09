@@ -6,6 +6,7 @@ nbproject
 .idea
 .project
 .settings
+composer
 composer.lock
 vendor/bin
 .teste.txt
