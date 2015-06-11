@@ -19,7 +19,7 @@ class IndexController extends AbstractActionController {
         if($this->flashMessenger()->hasMessages()){
             $messages = $this->flashMessenger()->getMessages();
         }
-        return array('messages'=>$messages);//outra forma de renderização de views
+        return array('messages'=>$messages);//outra forma de retornar a renderização nas views
         //return new ViewModel(array('messages'=>$messages));
     }
     public function fooAction() {

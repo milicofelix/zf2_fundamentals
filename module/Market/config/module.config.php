@@ -38,7 +38,7 @@ return array(
                             'main' => array(
                                 'type' => 'Segment',
                                 'options' => array(
-                                    'route' => '/main[/:category]',
+                                    'route' => 'main[/:category]',
                                     'defaults' => array(
                                         'action' => 'index'
                                     )

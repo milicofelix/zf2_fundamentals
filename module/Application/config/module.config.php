@@ -116,7 +116,7 @@ return array(
     //Helpers
     'view_helpers' => array(
         'invokables' => array(
-            'leftLinks' => 'Application/Helper/LeftLinks'
+            'leftLinks' => 'Application\Helper\LeftLinks'
         )
     ),
     // Placeholder for console routes
