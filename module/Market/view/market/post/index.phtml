@@ -1,0 +1,14 @@
+<style>
+    label{
+        width: 225px;
+    }
+</style>
+<?php
+
+echo '<h1>Post Controller</h1>';
+
+$this->postForm->prepare();
+echo $this->form()->openTag($this->postForm);
+echo $this->formCollection($this->postForm);
+echo $this->form()->closeTag();
+Zend\Debug\Debug::dump($this->data);

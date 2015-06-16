@@ -21,7 +21,7 @@ return array(
                         'controller' => 'market-index-controller',
                         'action' => 'index'
                     )
-                ),               
+                ),
                 'may_terminate' => true,
                 'child_routes' => array(
                     'view' => array(
@@ -60,6 +60,19 @@ return array(
                     )
                 )
             ),
+            
+            'market-post' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/market/post[/]',
+                    'defaults' => array(
+                        'controller' => 'market-post-controller',
+                        'action' => 'index'
+                    )
+                    
+                )
+            ),
+            
             'market-test' => array(
                 'type' => 'Segment',
                 'options' => array(
@@ -79,11 +92,16 @@ return array(
             'market-view-controller' => 'Market\Controller\ViewController'
         ),
         'factories' => array(
-            'market-post-controller' => 'Market\Factory\PostControllerFactory'
+            'market-post-controller' => 'Market\Factory\PostControllerFactory',
         //'market-post-controller' => 'Market\Controller\PostControllerFactory'  /** foi apenas um teste **/
         ),
         'aliases' => array(
             'alt' => 'market-view-controller'
+        )
+    ),
+    'service_manager' => array(
+        'factories' => array(
+            'market-post-form' => 'Market\Factory\PostFormFactory'
         )
     ),
     'view_manager' => array(
