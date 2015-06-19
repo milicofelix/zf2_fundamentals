@@ -10,9 +10,10 @@ namespace Market\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-//use Zend\View\Helper\FlashMessenger;
 
 class IndexController extends AbstractActionController {
+    
+    use ListingsTableTrait;
 
     public function indexAction() {
         $messages = array();

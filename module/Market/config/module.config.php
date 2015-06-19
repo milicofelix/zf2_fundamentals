@@ -86,13 +86,13 @@ return array(
         )
     ),
     'controllers' => array(
-        'invokables' => array(
-            'market-index-controller' => 'Market\Controller\IndexController',
-            'market-test-controller' => 'Market\Controller\TestController',
-            'market-view-controller' => 'Market\Controller\ViewController'
+        'invokables' => array(            
+            'market-test-controller'    => 'Market\Controller\TestController',            
         ),
         'factories' => array(
-            'market-post-controller' => 'Market\Factory\PostControllerFactory',
+            'market-index-controller'   => 'Market\Factory\IndexControllerFactory',
+            'market-post-controller'    => 'Market\Factory\PostControllerFactory',
+            'market-view-controller'    => 'Market\Factory\ViewControllerFactory'
         //'market-post-controller' => 'Market\Controller\PostControllerFactory'  /** foi apenas um teste **/
         ),
         'aliases' => array(
@@ -101,8 +101,10 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
+            'general-adapter'       => 'Zend\Db\Adapter\AdapterServiceFactory',
             'market-post-form'      => 'Market\Factory\PostFormFactory',
-            'market-post-filter'    => 'Market\Factory\PostFilterFactory'
+            'market-post-filter'    => 'Market\Factory\PostFilterFactory',
+            'listings-table'        => 'Market\Factory\ListingsTableFactory'
         )
     ),
     'view_manager' => array(
