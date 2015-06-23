@@ -24,7 +24,7 @@ class IndexControllerFactory implements FactoryInterface {
         $indexController = new IndexController();
 //        $indexController->setCategories($categories);
 //        $indexController->setPostForm($sm->get('market-post-form'));
-        $indexController->setListsTable($sm->get('listings-table'));
+        $indexController->setListingsTable($sm->get('listings-table'));
         
         return $indexController;
     }

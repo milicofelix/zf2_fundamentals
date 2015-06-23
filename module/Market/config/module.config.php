@@ -93,7 +93,6 @@ return array(
             'market-index-controller'   => 'Market\Factory\IndexControllerFactory',
             'market-post-controller'    => 'Market\Factory\PostControllerFactory',
             'market-view-controller'    => 'Market\Factory\ViewControllerFactory'
-        //'market-post-controller' => 'Market\Controller\PostControllerFactory'  /** foi apenas um teste **/
         ),
         'aliases' => array(
             'alt' => 'market-view-controller'

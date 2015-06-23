@@ -11,7 +11,7 @@ Trait ListingsTableTrait {
     
     private $listingsTable;
     
-    public function setListsTable($listingsTable){
+    public function setListingsTable($listingsTable){
         $this->listingsTable = $listingsTable;
     }
 }

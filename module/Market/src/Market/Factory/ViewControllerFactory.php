@@ -24,7 +24,7 @@ class ViewControllerFactory implements FactoryInterface {
         $viewController = new ViewController();
 //        $viewController->setCategories($categories);
 //        $viewController->setPostForm($sm->get('market-post-form'));
-        $viewController->setListsTable($sm->get('listings-table'));
+        $viewController->setListingsTable($sm->get('listings-table'));
         
         return $viewController;
     }
